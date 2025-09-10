@@ -5,7 +5,7 @@ Gọi API để lấy currentWeather và forecast
 Child component WeatherCard và Forecast hiển thị thời tiết hiện tại và dự báo*/
 /*1. Import và khai báo interface */
 import { FormEvent, useState } from "react";
-import { CurrentWeather, GeoData, WeatherData, WeatherItem, ForecastItem, ForecastData } from "../types/weatherTypes";
+import { GeoData, WeatherData, WeatherItem } from "../types/weatherTypes";
 import useFetchWeather from "../hooks/useFetchWeather";
 import useGeolocation from "../hooks/useGeolocation";
 import { WeatherCard } from "./WeatherCard";
