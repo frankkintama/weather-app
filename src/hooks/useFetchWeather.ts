@@ -1,7 +1,7 @@
 /*Gọi API để lấy dữ liệu thời tiết và dự báo */
 import { useQuery } from "@tanstack/react-query";
 import { fetchWeatherByCity, fetchWeatherByCoords } from "../services/api";
-import type { GeoData, WeatherData } from "../types/weatherTypes"
+import { GeoData, WeatherData } from "../types/weatherTypes"
 
 export default function useFetchWeather(
     geoData: GeoData | null, 
