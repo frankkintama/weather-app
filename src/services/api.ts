@@ -8,6 +8,7 @@ const currentForecastUrl = `${weatherUrl}/forecast`;
 
 export const weatherIconUrls = 'https://openweathermap.org/img/wn/';
 
+//thêm vào vite-env.d.ts để code hoạt động
 const apiKey = import.meta.env.VITE_API_KEY;
 
 
