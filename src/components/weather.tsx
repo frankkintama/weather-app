@@ -1,57 +1,15 @@
-/*lấy vị trí người dùng bằng useGeolocation
+/*Main component:
+lấy vị trí người dùng bằng useGeolocation
 Cho phép người dùng nhập tên City và search
 Gọi API để lấy currentWeather và forecast
-Child component WeatherCard cho thời tiết hiện tại, Forecast cho dự báo*/
+Child component WeatherCard và Forecast hiển thị thời tiết hiện tại và dự báo*/
 /*1. Import và khai báo interface */
 import { FormEvent, useState } from "react";
+import { CurrentWeather, GeoData, WeatherData, WeatherItem, ForecastItem, ForecastData } from "../types/weatherTypes";
 import useFetchWeather from "../hooks/useFetchWeather";
 import useGeolocation from "../hooks/useGeolocation";
 import { WeatherCard } from "./WeatherCard";
 import { Forecast } from "./Forecast";
-
-
-interface CurrentWeather {
-  name: string;
-  main: {
-    temp: number;
-    feels_like: number;
-    humidity: number;
-    pressure: number;
-  };
-  weather: {
-    main: string;
-    description: string;
-    icon: string;
-  }[];
-  wind: {speed: number;};
-  sys: {country: string;};
-}
-
-interface GeoData{
-    latitude: number;
-    longitude: number
-}
-
-interface WeatherItem {
-  main: string;
-  description: string;
-  icon: string;
-};
-
-interface ForecastItem {
-  dt: number;
-  dt_txt: string;
-  main: {temp: number;};
-  weather: WeatherItem[];
-  wind: {speed:number};
-}
-
-interface ForecastData {list: ForecastItem[];}
-
-interface WeatherData {
-  currentWeather: CurrentWeather;
-  forecast: ForecastData;
-}
 
 
 export default function Weather() {

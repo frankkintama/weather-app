@@ -1,3 +1,4 @@
+/*Dùng navigator.geolocation để lấy vị trí của người dùng */
 import { useEffect, useState } from "react";
 
 export default function useGeolocation(){ 

@@ -1,30 +1,15 @@
+/*Hiển thị: nhiệt độ; mô tả thời tiết; tốc độ gió; độ ẩm; icon thời tiết */
 import { getFormattedDate } from "../utils";
-
-interface WeatherData {
-  name: string;
-  sys: {country: string;};
-  main: {
-    temp: number;
-    feels_like: number;
-    humidity: number;
-    pressure: number;
-  };
-  weather: {
-    main: string;
-    description: string;
-    icon: string;
-  }[];
-  wind: {speed: number;};
-}
+import { CurrentWeather, WeatherData } from "../types/weatherTypes";
 
 interface WeatherCardProps {
-    data: WeatherData;
+    data: CurrentWeather;
 }
 
 const weatherIconUrl = 'https://openweathermap.org/img/wn/'
 
 export function WeatherCard({data}: WeatherCardProps) {
-    const {name, main, sys, weather, wind} = data;
+    const {name, main, weather, wind, sys} = data;
 
     return (
         <div className='flex flex-col items-center bg-white shadow-md rounded-md p-6 w-72 flex-shrink-0'>
