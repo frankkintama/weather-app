@@ -1,6 +1,6 @@
 /*Hiển thị: nhiệt độ; mô tả thời tiết; tốc độ gió; độ ẩm; icon thời tiết */
 import { getFormattedDate } from "../utils";
-import { CurrentWeather, WeatherData } from "../types/weatherTypes";
+import { CurrentWeather } from "../types/weatherTypes";
 
 interface WeatherCardProps {
     data: CurrentWeather;
