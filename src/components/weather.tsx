@@ -5,12 +5,11 @@ Gọi API để lấy currentWeather và forecast
 Child component WeatherCard và Forecast hiển thị thời tiết hiện tại và dự báo*/
 /*1. Import và khai báo interface */
 import { FormEvent, useState } from "react";
-import { GeoData, WeatherData } from "../types/weatherTypes";
-import useFetchWeather from "../hooks/useFetchWeather";
-import useGeolocation from "../hooks/useGeolocation";
+import { GeoData, WeatherData} from "../types/weatherTypes";
 import { WeatherCard } from "./WeatherCard";
 import { Forecast } from "./Forecast";
-
+import useFetchWeather from "../hooks/useFetchWeather";
+import useGeolocation from "../hooks/useGeolocation";
 
 export default function Weather() {
 /*2. useGeolocation hook */
@@ -60,7 +59,7 @@ Nếu geoData tồn tại, nó sẽ được dùng để lấy thời tiết m�
 /*6. Xử lý form tìm kiếm */
     const handleSearch = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if(city.trim()) {
+        if(city.trim()) { //loại bỏ khoảng trắng cho dữ liệu nhập
             setSearchQuery(city.trim())
         }
     }
